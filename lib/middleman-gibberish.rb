@@ -130,8 +130,8 @@ module ::Middleman
         libs.map do |lib|
           script = File.join(source_dir, 'javascripts', lib)
 
-          if test(?s, script)
-          #if false
+          #if test(?s, script)
+          if false
             javascript_include_tag(lib)
           else
             src = cdn + lib
