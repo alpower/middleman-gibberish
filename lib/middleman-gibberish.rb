@@ -46,8 +46,8 @@ module ::Middleman
     end
 
 # FIXME
-    def javascript_include_tag(*args, &block) 
-      @app.send(:javascript_include_tag, *args, &block) 
+    def javascript_include_tag(*args, &block)
+      @app.send(:javascript_include_tag, *args, &block)
     end
 
     def password(*password)
@@ -124,14 +124,14 @@ module ::Middleman
   #
     def script_for(glob, path, encrypted)
       libs = %w( jquery.js jquery.cookie.js gibberish.js )
-      cdn = 'http://ahoward.github.io/middleman-gibberish/assets/'
+      cdn = '//ahoward.github.io/middleman-gibberish/assets/'
 
       scripts =
         libs.map do |lib|
           script = File.join(source_dir, 'javascripts', lib)
 
-          #if test(?s, script)
-          if false
+          if test(?s, script)
+          #if false
             javascript_include_tag(lib)
           else
             src = cdn + lib
@@ -232,7 +232,7 @@ module ::Middleman
                 return false;
               };
 
-              password.keyup(function(e){ 
+              password.keyup(function(e){
                 var code = e.which;
                 e.preventDefault();
 
@@ -248,7 +248,7 @@ module ::Middleman
                 return(false);
               });
 
-          
+
               var _password = jQuery.cookie(cookie);
               decrypt(_password);
             });
